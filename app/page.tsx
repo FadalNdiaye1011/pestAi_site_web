@@ -14,6 +14,11 @@ import Partenaire from "./components/Partenaire";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
+type NavbarProps = {
+  onPageChange: (page: string) => void;
+  currentPage: string;
+}
+
 export default function Home() {
   const [currentPage, setCurrentPage] = useState<any>('accueil');
   const [isLoading, setIsLoading] = useState<any>(false);
@@ -400,7 +405,7 @@ export default function Home() {
 }
 
 // Composant Navbar modifié
-function NavbarWithPageHandling({ onPageChange, currentPage }) {
+function NavbarWithPageHandling({ onPageChange, currentPage }: NavbarProps) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -413,7 +418,7 @@ function NavbarWithPageHandling({ onPageChange, currentPage }) {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const handleMenuClick = (href, label) => {
+  const handleMenuClick = (href:any, label:any) => {
     const page = href.replace('#', '');
     onPageChange(page);
     
