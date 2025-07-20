@@ -107,7 +107,7 @@ export default function Testimonials() {
     }, 300)
   }
 
-  const goToSlide = (index) => {
+  const goToSlide = (index:any) => {
     if (isAnimating || index === currentSlide) return
     setIsAnimating(true)
     setTimeout(() => {

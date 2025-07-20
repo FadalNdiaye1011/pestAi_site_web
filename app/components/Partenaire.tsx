@@ -126,7 +126,7 @@ export default function Partenaire() {
     setCurrentIndex(prev => prev <= 0 ? maxIndex : prev - 1)
   }
 
-  const goToSlide = (index) => {
+  const goToSlide = (index:any) => {
     setCurrentIndex(index)
   }
 
@@ -172,10 +172,11 @@ export default function Partenaire() {
                                 src={partner.logo}
                                 alt={partner.name}
                                 className="w-16 h-16 mx-auto rounded-full object-cover group-hover:scale-110 transition-transform duration-300"
-                                onError={(e) => {
-                                  // Fallback vers l'icône si l'image ne charge pas
-                                  e.target.style.display = 'none'
-                                  e.target.nextSibling.style.display = 'flex'
+                                onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                                  const target = e.target as HTMLImageElement;
+                                  target.style.display = 'none';
+                                  const nextSibling = target.nextSibling as HTMLElement;
+                                  nextSibling.style.display = 'flex';
                                 }}
                               />
                               <div 

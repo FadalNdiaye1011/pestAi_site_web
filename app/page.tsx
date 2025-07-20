@@ -15,8 +15,8 @@ import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 
 export default function Home() {
-  const [currentPage, setCurrentPage] = useState('accueil');
-  const [isLoading, setIsLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState<any>('accueil');
+  const [isLoading, setIsLoading] = useState<any>(false);
 
   // Gérer le changement de page via l'URL hash
   useEffect(() => {
@@ -37,7 +37,7 @@ export default function Home() {
   }, []);
 
   // Fonction pour changer de page avec animation
-  const handlePageChange = (page) => {
+  const handlePageChange = (page:any) => {
     if (page === currentPage) return;
     
     setIsLoading(true);

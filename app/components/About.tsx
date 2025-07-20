@@ -157,7 +157,7 @@ export default function About() {
     return companyData.team.slice(start, end)
   }
 
-  const goToPage = (pageIndex) => {
+  const goToPage = (pageIndex:any) => {
     setCurrentIndex(pageIndex)
   }
 
@@ -291,14 +291,16 @@ export default function About() {
                     >
                       {/* Image de fond */}
                       <div className="absolute inset-0 bg-gradient-to-br from-emerald-500 to-blue-600">
-                        <img 
-                          src={member.image} 
-                          alt={member.nom}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                          onError={(e) => {
-                            e.target.style.display = 'none';
-                            e.target.nextSibling.style.display = 'block';
-                          }}
+                        <img
+                            src={member.image}
+                            alt={member.nom}
+                            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                            onError={(e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+                              const target = e.target as HTMLImageElement;
+                              target.style.display = 'none';
+                              const nextSibling = target.nextSibling as HTMLElement;
+                              nextSibling.style.display = 'block';
+                            }}
                         />
                         {/* Fallback icon */}
                         <div className="absolute inset-0 hidden items-center justify-center p-4">

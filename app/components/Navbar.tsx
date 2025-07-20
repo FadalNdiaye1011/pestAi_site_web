@@ -12,9 +12,11 @@ export default function Navbar() {
       setIsScrolled(window.scrollY > 50);
     };
 
-    // Smooth scroll handler
-    const handleSmoothScroll = (e: { currentTarget: { getAttribute: (arg0: string) => any; }; preventDefault: () => void; }) => {
-      const targetId = e.currentTarget.getAttribute('href');
+    // Smooth scroll handler avec typage correct
+    const handleSmoothScroll = (e: Event) => {
+      const target = e.currentTarget as HTMLAnchorElement;
+      const targetId = target.getAttribute('href');
+
       if (targetId && targetId.startsWith('#')) {
         e.preventDefault();
         const targetElement = document.querySelector(targetId);
@@ -29,14 +31,15 @@ export default function Navbar() {
     // Add click event to all anchor links
     const anchorLinks = document.querySelectorAll('a[href^="#"]');
     anchorLinks.forEach(link => {
-      link.addEventListener('click', handleSmoothScroll);
+      link.addEventListener('click', handleSmoothScroll as EventListener);
     });
 
     window.addEventListener('scroll', handleScroll);
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
       anchorLinks.forEach(link => {
-        link.removeEventListener('click', handleSmoothScroll);
+        link.removeEventListener('click', handleSmoothScroll as EventListener);
       });
     };
   }, []);

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react'
 import SectionTitle from './SectionTitle'
 
 export default function Parcours() {
-  const [visibleSteps, setVisibleSteps] = useState([])
+  const [visibleSteps, setVisibleSteps] = useState<number[]>([])
   const [currentStep, setCurrentStep] = useState(0)
 
   useEffect(() => {
