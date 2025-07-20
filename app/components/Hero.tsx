@@ -130,7 +130,7 @@ export default function Hero() {
   }, [currentImageSlide])
 
   return (
-    <section id="accueil" className="hero-bg min-h-screen flex items-center pt-16 sm:pt-20 relative overflow-hidden px-4 sm:px-5" 
+    <section id="accueil" className="hero-bg min-h-screen flex items-center pt-20 sm:pt-24 pb-8 sm:pb-12 relative overflow-hidden px-6 sm:px-8 lg:px-4" 
              >
       <div className="wave-shape"></div>
       {/* Floating particles */}
@@ -147,10 +147,10 @@ export default function Hero() {
         ></div>
       ))}
 
-      <div className="content-container max-w-7xl mx-auto w-full relative z-10 py-14">
+      <div className="content-container max-w-7xl mx-auto w-full relative z-10 py-8 sm:py-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Section texte */}
-          <div className="text-white order-2 lg:order-1">
+          <div className="text-white order-2 lg:order-1 px-2 sm:px-0">
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               Protégeons les <span style={{ color: 'var(--color-pest-highlight)' }}>cultures</span> avec l'<span className='text-pest-highlight'>IA</span>
             </h1>
@@ -194,7 +194,7 @@ export default function Hero() {
           </div>
           
           {/* Section iPhone - Responsive */}
-          <div className="iphone-container order-1 lg:order-2 mb-8 lg:mb-0">
+          <div className="iphone-container order-1 lg:order-2 mb-8 lg:mb-0 px-4 sm:px-0">
             <div className="iphone">
               <div className="iphone-body" style={{ 
                 background: 'var(--color-pest-gray-900)',
