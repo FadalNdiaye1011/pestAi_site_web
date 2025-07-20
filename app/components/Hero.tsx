@@ -147,7 +147,7 @@ export default function Hero() {
         ></div>
       ))}
 
-      <div className="content-container max-w-7xl mx-auto w-full relative z-10">
+      <div className="content-container max-w-7xl mx-auto w-full relative z-10 py-14">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Section texte */}
           <div className="text-white order-2 lg:order-1">
