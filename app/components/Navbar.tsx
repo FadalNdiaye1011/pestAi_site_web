@@ -77,10 +77,10 @@ export default function Navbar() {
  
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          {/* Logo avec image PEST AI */}
+          {/* Logo seul - PEST AI text supprimé */}
           <div className="flex items-center group cursor-pointer">
             <div className="relative">
-              <div className="w-15 h-15 bg-gradient-to-br rounded-2xl flex items-center justify-center mr-4 shadow-pest-lg group-hover:shadow-pest-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 overflow-hidden">
+              <div className="w-15 h-15 bg-gradient-to-br rounded-2xl flex items-center justify-center shadow-pest-lg group-hover:shadow-pest-xl transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 overflow-hidden">
                 <Image
                   src="/logo.png"
                   alt="PEST AI Logo"
@@ -89,9 +89,7 @@ export default function Navbar() {
                   className="w-full h-full object-contain"
                 />
               </div>
- 
             </div>
-    
           </div>
           
           {/* Menu desktop avec couleurs PEST AI */}
