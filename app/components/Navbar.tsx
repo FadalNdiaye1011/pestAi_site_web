@@ -91,11 +91,7 @@ export default function Navbar() {
               </div>
  
             </div>
-            <div className="relative">
-              <span className="text-3xl font-black bg-pest-highlight bg-clip-text text-transparent group-hover:from-pest-primary-light group-hover:via-pest-secondary-light group-hover:to-pest-accent-light transition-all duration-300">
-                PEST AI
-              </span>
-            </div>
+    
           </div>
           
           {/* Menu desktop avec couleurs PEST AI */}

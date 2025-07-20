@@ -65,7 +65,6 @@ export default function Hero() {
       anchor.addEventListener('click', handleSmoothScroll)
     })
 
-
     // Animation on scroll
     const observerOptions = {
       threshold: 0.1,
@@ -131,14 +130,14 @@ export default function Hero() {
   }, [currentImageSlide])
 
   return (
-    <section id="accueil" className="hero-bg min-h-screen flex items-center pt-20 relative overflow-hidden p-5" 
+    <section id="accueil" className="hero-bg min-h-screen flex items-center pt-16 sm:pt-20 relative overflow-hidden px-4 sm:px-5" 
              >
       <div className="wave-shape"></div>
       {/* Floating particles */}
       {[...Array(6)].map((_, i) => (
         <div 
           key={i}
-          className="particle" 
+          className="particle hidden sm:block" 
           style={{
             top: `${20 + i * 10}%`,
             left: `${10 + i * 5}%`,
@@ -148,25 +147,26 @@ export default function Hero() {
         ></div>
       ))}
 
-      <div className="content-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-          <div className="text-white">
-            <h1 className="text-5xl lg:text-7xl font-bold mb-6 leading-tight mt-5">
+      <div className="content-container max-w-7xl mx-auto w-full relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          {/* Section texte */}
+          <div className="text-white order-2 lg:order-1">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
               Protégeons les <span style={{ color: 'var(--color-pest-highlight)' }}>cultures</span> avec l'<span className='text-pest-highlight'>IA</span>
             </h1>
-            <p className="text-xl mb-8 opacity-90 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-xl mb-6 sm:mb-8 opacity-90 leading-relaxed">
               PestAI révolutionne l'agriculture avec une solution intelligente qui détecte les maladies et ravageurs grâce à l'IA et une synthèse vocale en langue locale.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <button className="glow-button px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg"
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 sm:mb-12">
+              <button className="glow-button px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 transform hover:scale-105 shadow-lg"
                       style={{ 
                         background: 'var(--color-pest-white)',
                         color: 'var(--color-pest-primary)'
                       }}>
-                � Découvrir l'application
+                📱 Découvrir l'application
               </button>
-              <button className="glow-button border-2 px-8 py-4 rounded-xl font-semibold transition-all duration-300 transform hover:scale-105"
+              <button className="glow-button border-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-sm sm:text-base transition-all duration-300 transform hover:scale-105"
                       style={{ 
                         borderColor: 'var(--color-pest-white)',
                         color: 'var(--color-pest-white)',
@@ -176,27 +176,29 @@ export default function Hero() {
               </button>
             </div>
             
-            <div className="grid grid-cols-3 gap-6">
+            {/* Stats - Responsive grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
               <div className="stats-card">
-                <div className="text-4xl font-bold mb-2" style={{ color: 'var(--color-pest-highlight)' }}>25%</div>
-                <div className="text-sm opacity-80">de pesticides économisés</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2" style={{ color: 'var(--color-pest-highlight)' }}>25%</div>
+                <div className="text-xs sm:text-sm opacity-80">de pesticides économisés</div>
               </div>
               <div className="stats-card">
-                <div className="text-4xl font-bold mb-2" style={{ color: 'var(--color-pest-accent)' }}>30%</div>
-                <div className="text-sm opacity-80">de pertes en moins</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2" style={{ color: 'var(--color-pest-accent)' }}>30%</div>
+                <div className="text-xs sm:text-sm opacity-80">de pertes en moins</div>
               </div>
               <div className="stats-card">
-                <div className="text-4xl font-bold mb-2" style={{ color: 'var(--color-pest-secondary)' }}>+300K</div>
-                <div className="text-sm opacity-80">agriculteurs ciblés</div>
+                <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-2" style={{ color: 'var(--color-pest-secondary)' }}>+300K</div>
+                <div className="text-xs sm:text-sm opacity-80">agriculteurs ciblés</div>
               </div>
             </div>
           </div>
           
-          <div className="iphone-container">
+          {/* Section iPhone - Responsive */}
+          <div className="iphone-container order-1 lg:order-2 mb-8 lg:mb-0">
             <div className="iphone">
               <div className="iphone-body" style={{ 
                 background: 'var(--color-pest-gray-900)',
-                boxShadow: '0 0 0 8px var(--color-pest-gray-700)'
+                boxShadow: '0 0 0 4px var(--color-pest-gray-700), 0 8px 32px rgba(0,0,0,0.3)'
               }}>
                 <div className="notch"></div>
                 <div className="iphone-screen">
